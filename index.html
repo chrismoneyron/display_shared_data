@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src = "jquery-1.12.4.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "show_data_style.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Bowlby+One+SC">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Yellowtail">
+	<title>Data Display</title>
+</head>
+<body>
+	<div id = "header_container">
+		<h1>DATA DISPLAY</h1>
+		<h3>/ Chris Moneyron</h3>
+	</div>
+	<div id = "main_container">
+		<h2>Booking Pace or Booking Summary?</h2>
+		<form id = "table_form">
+			<select id = "tablename">
+				<option selected = "selected" disabled>Tablename</option>
+				<option value = "bookingpace">Booking Pace</option>
+				<option value = "bookingsummary">Booking Summary</option>
+			</select><br>
+			Maximum Number of Rows:<br>
+			<input id = "max_rows"><br>
+			<button type = "button" id = "select_parameters_button" onclick = "select_parameters()">Select Parameters</button>
+		</form>
+		<p id = "no_parameters_message"></p>
+		<form id = "parameters_form"></form>
+		<form id = "login_form"></form>
+		<div id = "loader">
+			<div id = "bounce1"></div>
+			<div id = "bounce2"></div>
+			<div id = "bounce3"></div>
+		</div>
+		<h2 id = "table_header"></h2>
+		<table id = "data" onload = "display()" cellpadding="20px"></table>
+	</div>
+	<script>
+	$("#tablename").focus();
+	</script>
+	<script src = "select_parameters.js"></script>
+	<script src = "login.js"></script>
+	<script src = "create_path.js"></script>
+	<script src = "show_data.js"></script>
+</body>
+</html>
